@@ -1,0 +1,80 @@
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+    }
+
+    main {
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .planets_info {
+        display: flex;
+        gap: 69px;
+        align-items: center
+    }
+
+    .planets_img {
+        max-width: 422px;
+        height: 422px;
+        width: 100%;
+    }
+
+
+    .planets_name {
+        font-size: 48px;
+        line-height: 62px;
+    }
+
+    .planets_description {
+        font-size: 11px;
+        line-height: 22px;
+        padding-bottom: 32px;
+    }
+
+    .geology {
+        transform: translateX(-50%) translateY(0);
+        width: 140px;
+        height: 171px;
+    }
+
+
+
+    .menu-item {
+        width: 281px;
+        height: 40px;
+
+        .menu-title {
+
+            font-size: 9px;
+            line-height: 25px;
+            letter-spacing: 1.92857px;
+
+        }
+    }
+
+    .planets_text {
+        max-width: 339px;
+    }
+
+    .stat-item {
+        max-width: 164px;
+        height: 88px;
+
+        h3 {
+            font-size: 8px;
+            line-height: 16px;
+            letter-spacing: 0.727273px;
+        }
+
+
+        .stat-value {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 31px;
+            letter-spacing: -0.9px;
+
+        }
+    }
+}

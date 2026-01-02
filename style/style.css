@@ -1,0 +1,342 @@
+:root {
+    --white: #FFFFFF;
+    --dark--blue: #070724;
+    --dark--gray: #38384F;
+    --light--gray: #838391;
+    --mercury: #419EBB;
+    --venus: #EDA249;
+    --earth: #6f2ed6;
+    --mars: #D14C32;
+    --jupiter: #D83A34;
+    --saturn: #CD5120;
+    --uranus: #1ec2a4;
+    --neptune: #2d68f0;
+    --font-antoinino: 'Antonio', sans-serif;
+    --font-spartan: 'League Spartan', sans-serif;
+    --active-color: #419EBB;
+}
+
+
+body {
+    background-color: var(--dark--blue);
+    color: var(--white);
+    background-image: url(../images/background-stars.svg);
+    padding-inline: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-inline-start: 32px;
+    margin-inline-end: 40px;
+    padding-block-end: 20px;
+    align-items: center;
+
+
+
+
+    .header__logo {
+        font-family: var(--font-antoinino);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: -1.05px;
+        text-transform: uppercase;
+        color: var(--white);
+        padding-block-start: 15px;
+    }
+}
+
+main,
+footer {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+li>button {
+    font-family: var(--font-spartan);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+    opacity: 0.75;
+    padding-block-start: 20px;
+}
+
+.active_nav {
+    opacity: 1;
+    border-top: 4px solid var(--active-color);
+}
+
+.nav__list {
+    display: flex;
+    gap: 33px;
+    align-items: center;
+}
+
+hr {
+    background: var(--white);
+    mix-blend-mode: normal;
+    opacity: 0.2;
+}
+
+.header__line {
+    display: none;
+}
+
+main {
+    padding-top: 70px;
+    padding-bottom: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.burger {
+    display: none;
+  
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+}
+
+.burger_active{
+mix-blend-mode: normal;
+opacity: 0.25;
+
+}
+
+
+.planets_img {
+    width: 666px;
+    height: 666px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.geology {
+    background-image: url(../images/geology-mercury.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) translateY(-50%);
+    width: 163px;
+    height: 199px;
+}
+
+
+
+.planets_name {
+    font-family: var(--font-antoinino);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 104px;
+    text-transform: uppercase;
+    color: var(--white);
+    padding-bottom: 23px;
+
+}
+
+.planets_description {
+    font-family: var(--font-spartan);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--white);
+    max-width: 350px;
+    padding-bottom: 24px;
+
+}
+
+.wikipedia {
+    font-family: var(--font-spartan);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--white);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    margin-bottom: 39px;
+
+    a {
+
+        font-family: var(--font-spartan);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 25px;
+        text-decoration-line: underline;
+        color: var(--white);
+        mix-blend-mode: normal;
+        opacity: 0.5;
+
+
+    }
+
+    a::after {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-left: 8px;
+        background-image: url(../images/icon_wiki.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+
+
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mobile_menu {
+    display: none;
+}
+
+.menu-item:active {
+
+    background: hsla(0, 0%, 85%, 0.2);
+    mix-blend-mode: normal;
+    color: var(--white);
+}
+
+
+.menu-item.active {
+    background-color: var(--active-color);
+    border-bottom: none;
+}
+
+
+.menu-item {
+    cursor: pointer;
+    width: 350px;
+    height: 48px;
+    mix-blend-mode: normal;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    padding-inline-start: 28px;
+    gap: 25px;
+    font-family: var(--font-spartan);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 25px;
+    letter-spacing: 2.57143px;
+    text-transform: uppercase;
+    color: var(--white);
+
+
+    .menu-number {
+        font-family: var(--font-spartan);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 25px;
+        letter-spacing: 2.57143px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        mix-blend-mode: normal;
+        opacity: 0.5;
+
+    }
+
+    .menu-title {
+        font-family: var(--font-spartan);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 25px;
+        letter-spacing: 2.57143px;
+        text-transform: uppercase;
+        color: var(--white);
+
+    }
+}
+
+
+
+
+
+
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 56px;
+}
+
+.stat-item {
+    mix-blend-mode: normal;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 255px;
+    width: 100%;
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 23px;
+
+
+    h3 {
+        font-family: var(--font-spartan);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 25px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--white);
+        mix-blend-mode: normal;
+        opacity: 0.5;
+
+    }
+
+    p {
+        font-family: var(--font-antoinino);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 52px;
+        letter-spacing: -1.5px;
+        text-transform: uppercase;
+
+        color: var(--white);
+
+
+    }
+
+
+}
