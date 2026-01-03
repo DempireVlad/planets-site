@@ -1,10 +1,25 @@
+/** @type {HTMLElement} */
 const root = document.documentElement;
+
+/** @type {HTMLElement | null} */
 const burger = document.querySelector(".burger");
+
+/** @type {HTMLElement | null} */
 const menu = document.querySelector(".planets_mobile_choise");
+
+/** @type {NodeListOf<HTMLButtonElement>} */
 const planetButtons = document.querySelectorAll(".planet-btn");
+
+/** @type {NodeListOf<HTMLElement>} */
 const menuItem = document.querySelectorAll(".menu-item");
+
+/** @type {HTMLElement | null} */
 const structure_g = document.querySelector(".stucture_g");
+
+/** @type {HTMLImageElement | null} */
 const planetImg = document.querySelector(".planet_img");
+
+/** @type {string} */
 let planet = "mercury";
 
 // MOBILE MENU
@@ -36,7 +51,13 @@ planetButtons.forEach((button) => {
   });
 });
 
-// update from JSON
+/**
+ * Updates planet image and geology layer depending on selected section
+ *
+ * @param {string} planet - Planet name in lowercase (e.g. "mercury")
+ * @param {"overview" | "structure" | "surface"} section - Active content section
+ * @returns {void}
+ */
 function updateGeologyImage(planet, section) {
   const selectedPlanet = planetsData.find(
     (p) => p.name.toLowerCase() === planet
@@ -85,8 +106,29 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", moveMenu);
 });
 
-//data from JSON
+/**
+ * @typedef {Object} Planet
+ * @property {string} name
+ * @property {Object} overview
+ * @property {Object} structure
+ * @property {Object} geology
+ * @property {Object} images
+ * @property {string} rotation
+ * @property {string} revolution
+ * @property {string} radius
+ * @property {string} temperature
+ */
+
+/** @type {Planet[]} */
+
 let planetsData = [];
+
+/**
+ * Fetches planets data from JSON file and initializes the app
+ *
+ * @async
+ * @returns {Promise<void>}
+ */
 async function fetchData() {
   try {
     const response = await fetch("./data.json");
@@ -98,7 +140,11 @@ async function fetchData() {
     console.error("Error fetching data:", error);
   }
 }
-
+/**
+ * Initializes event listeners and updates UI with planet data
+ *
+ * @returns {void}
+ */
 function initApp() {
   //text replacement depending on the planet
   const planetsnName = document.querySelector(".planets_name");
@@ -109,10 +155,17 @@ function initApp() {
   const temperature = document.querySelector(".temperature");
   const wikipedia = document.querySelector(".wikipedia");
 
+
+   /**
+   * Returns planet data by name
+   *
+   * @param {string} name - Planet name in lowercase
+   * @returns {Planet | undefined}
+   */
   function getPlanetData(name) {
     return planetsData.find((p) => p.name.toLowerCase() === name);
   }
-
+ 
   planetButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const selectedPlanet = getPlanetData(button.dataset.planet);
